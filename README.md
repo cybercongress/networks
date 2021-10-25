@@ -2,7 +2,9 @@
 
 This repo contain info about all active and upcoming cyber chains. 
 
-The relevant guide for praticipating in genesis may be found *TODO*.
+## Bostrom gentx ceremony started!
+
+The relevant guide for praticipating in genesis may be found [here](https://github.com/cybercongress/networks/blob/main/bostrom/genesis-validator.md).
 
 
 ###Currently active: bostrom-testnet-6
@@ -11,8 +13,6 @@ The relevant guide for praticipating in genesis may be found *TODO*.
 
 [![chain](https://img.shields.io/badge/Chain-bostrom--testnet--6-success.svg?style=flat-square)](https://github.com/cybercongress/cyberd/blob/master/docs/run_validator.md)
 [![block](https://img.shields.io/badge/dynamic/json?color=blue&label=Block%20Height&query=%24.result.sync_info.latest_block_height&url=https://rpc.bostromdev.cybernode.ai/status&style=flat-square)]()
-[![cyberlinks](https://img.shields.io/badge/dynamic/json?color=blue&label=Cyberlinks&query=%24.result.links&url=https://lcd.bostromdev.cybernode.ai/graph/graph_stats&style=flat-square)]()
-[![particles](https://img.shields.io/badge/dynamic/json?color=blue&label=Particles&query=%24.result.cids&url=https://lcd.bostromdev.cybernode.ai/graph/graph_stats&style=flat-square)]()
 [![negentropy](https://img.shields.io/badge/dynamic/json?color=blue&label=-Entropy&query=%24.result.negentropy&url=https://lcd.bostromdev.cybernode.ai/rank/negentropy&style=flat-square)]()
 [![validators](https://img.shields.io/badge/dynamic/json?label=Validators&query=%24.result.validators.length&url=https://rpc.bostromdev.cybernode.ai/validators%3F&style=flat-square)]() 
 
