@@ -2,12 +2,18 @@
 
 This repo contain info about all active and upcoming cyber chains. 
 
+-------
+
 ## Bostrom gentx ceremony started!
 
-The relevant guide for praticipating in genesis may be found [here](https://github.com/cybercongress/networks/blob/main/bostrom/genesis-validator.md).
+**GenTx must be submited by 0:00 UTC 1st November**
+
+The relevant guide for praticipating in genesis could be found [here](https://github.com/cybercongress/networks/blob/main/bostrom/genesis-validator.md).
 
 
-###Currently active: bostrom-testnet-6
+For those who want to verify bostrom genesis file without signing: [QmQAd2SBwypsz5ZqkYgeSTFLq3peGV9xGE3i1gW5oPjcYT](https://gateway.ipfs.cybernode.ai/ipfs/QmQAd2SBwypsz5ZqkYgeSTFLq3peGV9xGE3i1gW5oPjcYT)
+
+-----
 
 ## Chainstats
 
