@@ -9,7 +9,7 @@ Some important notices about joining the genesis validator set:
 1. **GenTx must be submited by 0:00 UTC 1st November**
 2. We recommend only highly experienced validators who have run on past Cosmos SDK chains and have participated in a genesis ceremony before become genesis validators on Cyber.
 3. Being a Genesis validator for a Supercomputer is an honor, so we expect all participants to treat this opportuninty accordingly. We want our validators to be pro-active, maintain good uptime, communicate and act professionally during chain upgrades, and respectfully participate in governance.
-4. To become a Genesis validator, you must have boot tokens on your account in Genesis. That might've happened if you participated in one of our previous testenets or Game of Links, or some other kind of incentivized activity. 
+4. To become a Genesis validator, you must have boot tokens on your account in Genesis. That might've happened if you participated in one of our previous testnets or Game of Links, or some other kind of incentivized activity. 
 
 
 ## Hardware setup
@@ -34,7 +34,7 @@ All instructions provided are for the Ubuntu 20.04 system and may vary for other
 
 ### Install GO 1.17+
 
-Cyber is write and go, and we'll need the version 1.17+ to compile it. 
+Cyber is written in `go`, and we'll need the version 1.17+ to compile it. 
 
 Check which version you currently have with 
 
@@ -127,7 +127,7 @@ You can now download the "pregenesis" file for the chain.  This is a genesis fil
 
 ```sh
 cd $HOME/.cyber/config/
-curl https://_TODO_LINK_HERE > $HOME/.cyber/config/genesis.json
+wget -O $HOME/.cyber/config/genesis.json  https://gateway.ipfs.cybernode.ai/ipfs/QmQAd2SBwypsz5ZqkYgeSTFLq3peGV9xGE3i1gW5oPjcYT
 ```
 
 ### Import Validator Key
