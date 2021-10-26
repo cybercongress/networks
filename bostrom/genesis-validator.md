@@ -90,7 +90,7 @@ Result must look like that:
 name: cyber
 server_name: cyber
 version: 0.2.0-rc2
-commit: cdc61f8dd7b1cdbae19985304e63ac89afb935ad
+commit: .......
 build_tags: netgo ledger,
 go: go version go1.17.2 linux/amd64
 build_deps:
@@ -173,16 +173,14 @@ An example Genesis command would look like this:
 
 ```bash
 cyber gentx <your_key_name> \
-  --amount=10000000boot \
-  --min-self-delegation "1000000" \
+  --amount=10000000000boot \
+  --min-self-delegation "1000000000" \
   --pubkey=$(cyber tendermint show-validator) \
-  --moniker=<your_node_nickname> \
-  --commission-rate="0.10" \
-  --commission-max-rate="0.20" \
+  --moniker=<your_validator_nickname> \
+  --commission-rate="0.05" \
+  --commission-max-rate="0.10" \
   --commission-max-change-rate="0.01" \
-  --chain-id=bostrom \
-  --gas-prices 0.01boot \
-  --gas 600000
+  --chain-id=bostrom 
 ```
 
 Output will look similar to this:
