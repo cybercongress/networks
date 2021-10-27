@@ -172,8 +172,7 @@ Note that your gentx will be rejected if you use an amount greater than what you
 An example Genesis command would look like this:
 
 ```bash
-cyber gentx <your_key_name> \
-  --amount=10000000000boot \
+cyber gentx <your_key_name> 10000000000boot \
   --min-self-delegation "1000000000" \
   --pubkey=$(cyber tendermint show-validator) \
   --moniker=<your_validator_nickname> \
