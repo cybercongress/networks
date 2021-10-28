@@ -46,7 +46,7 @@ If you need to update or install 'go' we'd recommend to use the handy go version
 
 ```bash
 curl -sSL https://git.io/g-install | sh -s
-source ~/.bashrc/
+source ~/.bashrc
 ```
 
 Agree to install latest version, or manually install specific version: 
@@ -54,7 +54,7 @@ Agree to install latest version, or manually install specific version:
 ```bash
 g install 1.17.2
 g set 1.17.2
-go vesion
+go version
 ```
 You might see something like that: 
 
@@ -151,6 +151,19 @@ cyber keys add <your_key_name> --ledger
 **<your_key_name>** is any name you pick to represent this key pair.
 You have to refer to that name later when you use cli to sign transactions.
 
+*Note* 
+
+If you got an error saying 
+
+```js
+Error: No such interface “org.freedesktop.DBus.Properties” on object at path /
+```
+ during key import, please use file keyring with all cli key commands:
+
+ ```bash
+ cyber keys add <your_key_name> --recover --keyring-backend file
+ ```
+
 ### Create GenTx
 
 Now that you have your key imported you are able to use it to create your gentx.
@@ -172,7 +185,7 @@ Note that your gentx will be rejected if you use an amount greater than what you
 An example Genesis command would look like this:
 
 ```bash
-cyber gentx <your_key_name> 10000000000boot \
+cyber gentx <your_key_name> 10000000000boot \\
   --min-self-delegation "1000000000" \
   --pubkey=$(cyber tendermint show-validator) \
   --moniker=<your_validator_nickname> \
@@ -181,6 +194,9 @@ cyber gentx <your_key_name> 10000000000boot \
   --commission-max-change-rate="0.01" \
   --chain-id=bostrom 
 ```
+
+*add `--keyring-backend file` if you used it during key import.*
+
 
 Output will look similar to this:
 
