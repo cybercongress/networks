@@ -277,7 +277,7 @@ docker rm old-container-name
 ```
 
 Also if you have older nodes on your server, please remove the `cosmovisor`
- directory from .cyber, so it will be updated with the latest version of binaries:
+ directory from .cyber, so it will be updated with the latest version of binaries during docker startup:
 
  ```bash
  rm -rf  $HOME/.cyber/cosmovisor/
@@ -300,6 +300,12 @@ Download genesis file for bostrom:
 wget -O $HOME/.cyber/config/genesis.json https://gateway.ipfs.cybernode.ai/ipfs/QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr
 ```
 
+Also, it is **required** to remove old chain data and reset the home directory to state of signed genesis:
+
+```bash
+cyber unsafe-reset-all --home $HOME/.cyber/
+```
+
 ### Deploy docker container
 
 To pull and deploy docker container for `bostrom` chain use the following command:
@@ -308,11 +314,6 @@ To pull and deploy docker container for `bostrom` chain use the following comman
 docker run -d --gpus all --name=bostrom --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=false -v $HOME/.cyber:/root/.cyber  cyberd/cyber:bostrom-1
 ```
 
-Also, it is required to remove old chain data and reset the home directory:
-
-```bash
-docker exec -ti bostrom cyber unsafe-reset-all
-```
 
 ### Setup config.toml
 
