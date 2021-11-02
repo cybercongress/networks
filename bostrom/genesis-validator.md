@@ -276,7 +276,14 @@ docker stop old-container-name
 docker rm old-container-name
 ```
 
-Also if you have older nodes on your server, please remove the `cosmovisor`
+Check and remove older images to save some space
+
+```bash
+docker images
+docker rmi image_name
+```
+
+Also if you have older nodes on your server, **please remove the `cosmovisor`**
  directory from .cyber, so it will be updated with the latest version of binaries during docker startup:
 
  ```bash
@@ -291,7 +298,7 @@ Hereby we mean that you already have your cyber node initialized in $HOME direct
 Remove pre-genesis from .cyber:
 
 ```bash
-rm $HOME/.cyber/config/geneis.json
+rm $HOME/.cyber/config/genesis.json
 ```
 
 Download genesis file for bostrom:
@@ -349,7 +356,7 @@ persistent_peers_max_dial_period = "500s"
 
 Verify that your `priv_validator_key.json` from $HOME/.cyber/config/ directory matching to the one you used to create gentx.
 
-Check that `pub key value` section is similar to one corresponding to your validator name below:
+Check that `pub key value` section is similar to one corresponding your validator name below:
 
 ```bash
 cat $HOME/.cyber/config/priv_validator_key.json
