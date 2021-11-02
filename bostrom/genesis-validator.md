@@ -246,3 +246,172 @@ Your identity as validator consists of two things:
 Please back up `$HOME/.cyber/config/priv_validator_key.json` along with your seed phrase. In case of occasional folder loss you would be able to restore you validator.
 
 Those things should not be changed, otherwise, your validator won't start on Genesis. 
+
+
+## Prepare node for chain start
+
+Ok, so here is it, the final genesis for bostrom network - [QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr](https://gateway.ipfs.cybernode.ai/ipfs/QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr). We have 33 valid genesis transactions submitted! Now only a few steps left to finalize validator node setup for bostrom launch:
+
+- Clear out old containers
+- Download final genesis, and place it to working directory `$HOME/.cyber`
+- Pull and deploy new Docker container
+- Configure persistent peers, seeds, and some other stuff from `config.toml`
+- Verify the correctness of the keys and files on the node
+
+
+### Cleaning up
+
+If you somehow still have old containers like `bostrom-testnet-6` or `bostrom-testnet-7` sitting on your node - it is a good time to remove them now.
+
+Check which docker containers you have:
+
+```bash
+docker ps -a
+```
+
+And stop\delete all unnecessary:
+
+```bash
+docker stop old-container-name
+docker rm old-container-name
+```
+
+Also if you have older nodes on your server, please remove the `cosmovisor`
+ directory from .cyber, so it will be updated with the latest version of binaries:
+
+ ```bash
+ rm -rf  $HOME/.cyber/cosmovisor/
+ ```
+
+
+### Obtain signed genesis file
+
+Hereby we mean that you already have your cyber node initialized in $HOME directory.
+
+Remove pre-genesis from .cyber:
+
+```bash
+rm $HOME/.cyber/config/geneis.json
+```
+
+Download genesis file for bostrom:
+
+```bash
+wget -O $HOME/.cyber/config/genesis.json https://gateway.ipfs.cybernode.ai/ipfs/QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr
+```
+
+### Deploy docker container
+
+To pull and deploy docker container for `bostrom` chain use the following command:
+
+```bash
+docker run -d --gpus all --name=bostrom --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=false -v $HOME/.cyber:/root/.cyber  cyberd/cyber:bostrom-1
+```
+
+Also, it is required to remove old chain data and reset the home directory:
+
+```bash
+docker exec -ti bostrom cyber unsafe-reset-all
+```
+
+### Setup config.toml
+
+Add correct seeds and persistent peers nodes. You may find some [here](https://github.com/cybercongress/networks/blob/main/bostrom/peers.md)
+Insert them into lines 185 and 188 of $HOME/.cyber/config/config.toml:
+
+```bash
+nano $HOME/.cyber/config/config.toml
+```
+
+```bash
+# Comma separated list of seed nodes to connect to
+seeds = ""
+
+# Comma separated list of nodes to keep persistent connections to
+persistent_peers = ""
+```
+
+Also for better network stability please update your `.cyber/config/config.toml` lines as follows: 
+
+```
+addr_book_strict = false
+
+max_num_inbound_peers = 60
+
+max_num_outbound_peers = 30
+
+persistent_peers_max_dial_period = "500s"
+
+```
+
+### Verify validator keys
+
+Verify that your `priv_validator_key.json` from $HOME/.cyber/config/ directory matching to the one you used to create gentx.
+
+Check that `pub key value` section is similar to one corresponding to your validator name below:
+
+```bash
+cat $HOME/.cyber/config/priv_validator_key.json
+```
+```bash
+sta                 FVs7R89ToDtCaYNZHrRF8MWCQ4d3uxytQSMg4OMleW8=
+blue                110HUJd7XFqWhXbE/nF1D4pFcM/vQ8D9yOJbyQF6gsc=
+Node_masters        hkaRWuE3BNBVmeqv70qJ++iyYs7THerZyOhNa7E2gVM=
+Citizen Cosmos      hzZZ1s5Q2R0Qhbax0Hf7xS9m+kMxbc6FVUihIIoa35c=
+0base.vc            9EtOO5q/eUiQ1VtdFegl46fyhJ2tkzm2TDLkdm+zRm0=
+Space               0O20CW17q7chWZGHayK+SlEzCXfJaqTlshkE1xujQCg=
+Citadel.one         96vbjWw9jbyO8Krl9Rjbt8SU9tVuBiPhtVAxx28arcU=
+Developer           KdT8GK9d81xvkDzuNjM3nwi3mijxRfq2YWnM++SAIw4=
+qwertys318          r3NIqDgCKwxfTIdvsUYruUSv+ExKI/dyL9UxRt3uuHQ=
+web34ever           Kry59s/u3vENIsWu+4ssFqsnECWTxA8iOFSXPbIQmsU=
+POSTHUMAN           lWEU7pJSRroGTFMa5O6JKRC1JnGsupKTC88i3uAtxu0=
+papsan              YV4dJbW6TrErmwcs0VxFiAJUio+6Yh5shQ+hwlMveN8=
+P2P.ORG             4KsAoQUaZNVyA0Tc02Gw3GYxkuMdgtf+aXTOqKDNbgE=
+Nett                ChguMkmpTQCnekerrNnAnyFePLY3C1jacudM3SYOrdg=
+Godzilla            BncD9wiS2MKpBJw1t9PLoIeqQ9pTccPoGBx9cRNoZak=
+Kerman              0nAyxxNGDv3s2miDdJWibOEoWVre8jadmJiA7BSEugk=
+cyberG              uMw2XjXqICe1CvEbYCwN3GEXm5r1CBhc0TacHucheyw=
+Adorid              AK7c305pBQkAz05OE8rw5JkwSx+nhcvna6Tz9RXhE+Q=
+DemonKing           XXul+cFAn6BK4S/aZlMABb9h+jsqFi7/GgZ01JTfhnE=
+DragonBall          SmngMSNxQ7TnildgcI5OzZYJxWbwAH2C0UJj3M+J+Fw=
+StakeAngle          qOE+qVo9giTu6cypXg6zN3ZT9MitNBHfTYfLL2ADVGo=
+spectrum            ZxG1y2GSwb/HuBi8BFZLoYYUMyuvboplTa1DDuMGnG0=
+kiwi                823dliApVbj5vUsXFYViaOB6hI8/P7ul0zmZpHmW+80=
+PLap                2VHfckjdelAwGj8b3gw+kq7U0ni9aB9S3rNQx054iVU=
+dobry               ZxYmxQPGdPYaBJA8IY4Jg3h/Cs0wVRmPIippypxPrsU=
+goto5k              TVfJZnq2vaHv1XI49n7nPn1wVQxurVL3JDVVUUo/Ijo=
+alinode             JKHQ2Gg/+wWDMcvLwHoEHFccRVZYuGCBSTD/fnIi2vg=
+Hailbiafra          triXPhJGBlAduyzF6oF0PKHM9H2sXz9+TWY5gb9lkNI=
+csaxial             lB5R6K7wY2G4a3Aus+NWAwYiFga5Cc2WxvwZG3Ga3yk=
+NodeMarsel          fIbK0sEsisgCoXnWmrfApLX7SdvuhltzU1llq+jiV8k=
+MindPool            RPBRQHcurf6ZOoar9DWoncHbcEGmaceT0zdalDYsobo=
+Bro_n_Bro           SEiFL2BSD9TOUsPIaBKx5xZU+ijry95DdZ44u9mwd3Y=
+bloqhub             aIG2z/l2N3K6WslUGA8u5kZnqcvqyKEXQpoiiICLKa4=
+```
+
+## Launch
+
+When all above checked and completed please go ahead and restart the container:
+
+```bash
+docker restart bostrom
+```
+
+And check the logs. 
+
+```bash
+docker logs bostrom
+```
+
+They have to contain the following:
+
+```bash
+1:42AM INF Starting Node service impl=Node
+1:42AM INF Genesis time is in the future. Sleeping until then... genTime=2021-11-05T13:22:42Z
+```
+
+If you got that message - congrats, you set everything up!
+
+The chain will start at `5th November 13:22UTC`. Please track [Cyber Hall of Fame](https://t.me/fameofcyber) telegram chat, all coordination will be done there. 
+Also, watch bostrom genesis at `https://cyb.ai/genesis`, it must be something beautiful and interesting there! 
+See you in Cyber Era! 
