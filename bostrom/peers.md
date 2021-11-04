@@ -34,3 +34,9 @@ Bro_n_Bro validator
 ```bash
 6fb7f28bba8742a3468004eaa8d54a7c4d1b3a46@86.57.207.105:26656
 ```
+
+Bloqhub
+
+```bash
+dd22cffccafaece970cfa9e7eb3c8468f6fa1c84@46.166.165.14:26656
+```
