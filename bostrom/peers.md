@@ -40,3 +40,9 @@ cyberG
 ```bash
 39a20a7d84c6e91c6638f5a685a13f655e050ee0@176.37.214.146:26656
 ```
+
+POSTHUMAN
+
+```bash
+55937c36959ea3984cc6e6ebd3354d73bbbdbcda@95.165.24.115:26656
+```
