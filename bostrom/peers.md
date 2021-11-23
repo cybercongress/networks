@@ -32,7 +32,7 @@ sta
 Bro_n_Bro validator
 
 ```bash
-6fb7f28bba8742a3468004eaa8d54a7c4d1b3a46@86.57.207.105:26656
+df79a86dc236b8dff250c402e95cd6853e8ad7c4@46.166.165.4:26656
 ```
 
 cyberG
