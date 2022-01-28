@@ -1,6 +1,6 @@
 # Cyber networks
 
-This repo contain info about all active and upcoming cyber chains. 
+This repo contains info about all active and upcoming cyber chains. 
 
 -------
 
