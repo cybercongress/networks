@@ -69,3 +69,46 @@ POSTHUMAN
 ```bash
 55937c36959ea3984cc6e6ebd3354d73bbbdbcda@95.165.24.115:26656
 ```
+
+
+## Run a seed on akash
+
+```yaml
+---
+version: "2.0"
+
+services:
+  osmosis:
+    image: ghcr.io/notional-labs/tinyseed:latest
+    env: 
+     - ID=bostrom
+     - SEEDS=d0518ce9881a4b0c5872e5e9b7c4ea8d760dad3f@85.10.207.173:26656
+    expose:
+      - port: 8080
+        to:
+          - global: true
+      - port: 6969
+        to:
+          - global: true
+profiles:
+  compute:
+    osmosis:
+      resources:
+        cpu:
+          units: 1
+        memory:
+          size: 100Mi
+        storage:
+          size: 100Mi
+  placement:
+    dcloud:
+      pricing:
+        osmosis:
+          denom: uakt
+          amount: 10
+deployment:
+  osmosis:
+    dcloud:
+      profile: osmosis
+      count: 1
+```
