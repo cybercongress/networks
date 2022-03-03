@@ -8,6 +8,11 @@ cybercongress
 d0518ce9881a4b0c5872e5e9b7c4ea8d760dad3f@85.10.207.173:26656
 ```
 
+notional
+```bash
+9ccf246720ba68f22c32548159fbe7cc5fc2f429@provider.xeon.computer:32199
+```
+
 ## Peers:
 
 cyberongress:
