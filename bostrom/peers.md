@@ -64,3 +64,9 @@ POSTHUMAN
 ```bash
 55937c36959ea3984cc6e6ebd3354d73bbbdbcda@95.165.24.115:26656
 ```
+
+medium
+
+```bash
+743ade5b1e9033031abcaec008eba6d49887144a@188.214.128.148:26656
+```
