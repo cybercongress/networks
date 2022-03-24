@@ -1,6 +1,6 @@
 # Setting up cyber Genesis Validator
 
-This guide will provide detailed instructions on how to submit gentx for bostrom chain!
+This guide will provide detailed instructions on how to submit gentx for the bostrom chain!
 
 The primary point of communication for the whole gentx and lauch ceremonies will be our [Cyber Hall of Fame](https://t.me/fameofcyber) telegram chat.
 
@@ -8,7 +8,7 @@ Some important notices about joining the genesis validator set:
 
 1. **GenTx must be submited by 0:00 UTC 1st November**
 2. We recommend only highly experienced validators who have run on past Cosmos SDK chains and have participated in a genesis ceremony before become genesis validators on Cyber.
-3. Being a Genesis validator for a Supercomputer is an honor, so we expect all participants to treat this opportuninty accordingly. We want our validators to be pro-active, maintain good uptime, communicate and act professionally during chain upgrades, and respectfully participate in governance.
+3. Being a Genesis validator for a Supercomputer is an honor, so we expect all participants to treat this opportunity accordingly. We want our validators to be pro-active, maintain good uptime, communicate and act professionally during chain upgrades, and respectfully participate in governance.
 4. To become a Genesis validator, you must have boot tokens on your account in Genesis. That might've happened if you participated in one of our previous testnets or Game of Links, or some other kind of incentivized activity. 
 
 
@@ -84,7 +84,7 @@ Verify your installation by running:
 cyber version --long
 ```
 
-Result must look like that: 
+Result must look like this: 
 
 ```bash
 name: cyber
@@ -106,14 +106,14 @@ If your `cyber` version does not match - please verify that you dont have any ot
 
 ### Initialize your node
 
-Before you proceed verify that you dont have any old\test nodes initialized in that machine, check and remove folders inside `~/.cyber/`. If you have the testnet node running, stop it and remove `~/.cyber/` folder (do not forget to backup your seeds before you remove anything):
+Before you proceed verify that you don't have any old\test nodes initialized in that machine, check and remove folders inside `~/.cyber/`. If you have the testnet node running, stop it and remove `~/.cyber/` folder (do not forget to backup your seeds before you remove anything):
 
 ```bash
 ls -la ~/
 rm -rf .cyber/
 ```
 
-Then run the following to init fresh one(replce <your_node_moniker> with something, for example `web2_destroyer`): 
+Then run the following to init fresh one(replace <your_node_moniker> with something, for example `web2_destroyer`): 
 
 ```bash
 cyber init <your_node_moniker>
@@ -250,7 +250,7 @@ Those things should not be changed, otherwise, your validator won't start on Gen
 
 ## Prepare node for chain start
 
-Ok, so here is it, the final genesis for bostrom network - [QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr](https://gateway.ipfs.cybernode.ai/ipfs/QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr). We have 33 valid genesis transactions submitted! Now only a few steps left to finalize validator node setup for bostrom launch:
+Ok, so here is it, the final genesis for the bostrom network - [QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr](https://gateway.ipfs.cybernode.ai/ipfs/QmYubyVNfghD4xCrTFj26zBwrF9s5GJhi1TmxvrwmJCipr). We have 33 valid genesis transactions submitted! Now only a few steps left to finalize the validator node setup for bostrom launch:
 
 - Clear out old containers
 - Download final genesis, and place it to working directory `$HOME/.cyber`
@@ -283,7 +283,7 @@ docker images
 docker rmi image_name
 ```
 
-Also if you have older nodes on your server, **please remove the `cosmovisor`**
+If you have older nodes on your server, **please remove the `cosmovisor`**
  directory from .cyber, so it will be updated with the latest version of binaries during docker startup:
 
  ```bash
@@ -315,7 +315,7 @@ cyber unsafe-reset-all --home $HOME/.cyber/
 
 ### Deploy docker container
 
-To pull and deploy docker container for `bostrom` chain use the following command:
+To pull and deploy docker container for the `bostrom` chain use the following command:
 
 ```bash
 docker run -d --gpus all --name=bostrom --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=false -v $HOME/.cyber:/root/.cyber  cyberd/cyber:bostrom-1
@@ -339,7 +339,7 @@ seeds = ""
 persistent_peers = ""
 ```
 
-Also for better network stability please update your `.cyber/config/config.toml` lines as follows: 
+For better network stability please update your `.cyber/config/config.toml` lines as follows: 
 
 ```
 addr_book_strict = false
@@ -354,9 +354,9 @@ persistent_peers_max_dial_period = "500s"
 
 ### Verify validator keys
 
-Verify that your `priv_validator_key.json` from $HOME/.cyber/config/ directory matching to the one you used to create gentx.
+Verify that your `priv_validator_key.json` from $HOME/.cyber/config/ directory matches the one you used to create gentx.
 
-Check that `pub key value` section is similar to one corresponding your validator name below:
+Check that `pub key value` section is similar to the one corresponding your validator name below:
 
 ```bash
 cat $HOME/.cyber/config/priv_validator_key.json
@@ -399,13 +399,13 @@ bloqhub             aIG2z/l2N3K6WslUGA8u5kZnqcvqyKEXQpoiiICLKa4=
 
 ## Launch
 
-When all above checked and completed please go ahead and restart the container:
+When all above are checked and completed please go ahead and restart the container:
 
 ```bash
 docker restart bostrom
 ```
 
-And check the logs. 
+Check the logs. 
 
 ```bash
 docker logs bostrom
@@ -421,5 +421,5 @@ They have to contain the following:
 If you got that message - congrats, you set everything up!
 
 The chain will start at `5th November 13:22UTC`. Please track [Cyber Hall of Fame](https://t.me/fameofcyber) telegram chat, all coordination will be done there. 
-Also, watch bostrom genesis at `https://cyb.ai/genesis`, it must be something beautiful and interesting there! 
-See you in Cyber Era! 
+Also, watch the bostrom genesis at `https://cyb.ai/genesis`, you can find something beautiful and interesting there! 
+See you in the Cyber Era! 
