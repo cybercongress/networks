@@ -1,4 +1,4 @@
-# Setting up cyber Genesis Validator
+# Setting up space-pussy Genesis Validator
 
 This guide will provide detailed instructions on how to submit gentx for the Space-pussy chain!
 
@@ -6,7 +6,7 @@ The primary point of communication for the whole gentx and lauch ceremonies will
 
 Some important notices about joining the genesis validator set: 
 
-1. **GenTx must be submited by 18:00 UTC 3rd October**
+1. **GenTx must be submited by 17:00 UTC 3rd October**
 2. We recommend only highly experienced validators who have run on past Cosmos SDK chains and have participated in a genesis ceremony before become genesis validators on Cyber.
 3. Being a Genesis validator for a Supercomputer is an honor, so we expect all participants to treat this opportunity accordingly. We want our validators to be pro-active, maintain good uptime, communicate and act professionally during chain upgrades, and respectfully participate in governance.
 4. To become a Genesis validator, you must have pussy tokens on your account in Genesis. 
@@ -102,7 +102,7 @@ You can now download the "pregenesis" file for the chain.  This is a genesis fil
 
 ```sh
 cd $HOME/.pussy/config/
-wget -O $HOME/.pussy/config/genesis.json  https://gateway.ipfs.cybernode.ai/ipfs/QmQAd2SBwypsz5ZqkYgeSTFLq3peGV9xGE3i1gW5oPjcYT
+wget -O $HOME/.pussy/config/genesis.json  https://github.com/joinresistance/networks/blob/main/space-pussy/unsigned-genesis.json
 ```
 
 ### Import Validator Key
@@ -160,7 +160,7 @@ Note that your gentx will be rejected if you use an amount greater than what you
 An example Genesis command would look like this:
 
 ```bash
-pussy gentx <your_key_name> 100000000000pussy \\
+pussy gentx <your_key_name> 1000000000000pussy \\
   --min-self-delegation "1000000000" \
   --pubkey=$(pussy tendermint show-validator) \
   --moniker=<your_validator_nickname> \
@@ -318,4 +318,4 @@ They have to contain the following:
 
 If you got that message - congrats, you set everything up!
 
-The chain will start at `3rd October 22:55UTC`. Please track [Cyber Hall of Fame](https://t.me/fameofcyber) telegram chat, all coordination will be done there.  
+The chain will start at `3rd October 19:55UTC`. Please track [Cyber Hall of Fame](https://t.me/fameofcyber) telegram chat, all coordination will be done there.  

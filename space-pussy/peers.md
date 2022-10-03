@@ -11,5 +11,11 @@ cyberongress:
 Bro_n_Bro validator
 
 ```bash
-tba
+2e51205853f88048ac2ccb0b830960bbead14996@93.159.133.250:56656
+```
+
+Citizen Cosmos
+
+```bash
+TBA
 ```
