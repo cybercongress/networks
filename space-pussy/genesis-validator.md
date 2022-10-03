@@ -160,7 +160,7 @@ Note that your gentx will be rejected if you use an amount greater than what you
 An example Genesis command would look like this:
 
 ```bash
-pussy gentx <your_key_name> 1000000000000pussy \\
+pussy gentx <your_key_name> 1000000000000pussy \
   --min-self-delegation "1000000000" \
   --pubkey=$(pussy tendermint show-validator) \
   --moniker=<your_validator_nickname> \
@@ -253,7 +253,7 @@ wget -O $HOME/.pussy/config/genesis.json https://gateway.ipfs.cybernode.ai/ipfs/
 Also, it is **required** to remove old chain data and reset the home directory to state of signed genesis:
 
 ```bash
-pussy unsafe-reset-all --home $HOME/.pussy/
+pussy tendermint unsafe-reset-all --home $HOME/.pussy/
 ```
 
 ### Deploy docker container
