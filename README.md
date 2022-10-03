@@ -2,9 +2,14 @@
 
 -------
 
-## Space-pussy genesis preparing
+## Space-pussy
 
-Coordination: [Cyber Hall of Fame](https://t.me/fameofcyber)
+API endpoints 
+
+https://rpc.space-pussy.cybernode.ai/
+https://lcd.space-pussy.cybernode.ai/
+https://index.space-pussy.cybernode.ai/
+https://grpc.space-pussy.cybernode.ai/
 
 ------
 ## Chainstats
