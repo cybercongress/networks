@@ -261,7 +261,7 @@ pussy unsafe-reset-all --home $HOME/.pussy/
 To pull and deploy docker container for the `space-pussy` chain use the following command:
 
 ```bash
-docker run -d --gpus all --name=space-pussy --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=false -v $HOME/.pussy:/root/.pussy  cyberd/cyber:space-pussy-v0.1.0
+docker run -d --gpus all --name=space-pussy --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=true -e COMPUTE_GPU=true -v $HOME/.pussy:/root/.pussy  cyberd/space-pussy:v0.0.1-cuda11.4
 ```
 
 
