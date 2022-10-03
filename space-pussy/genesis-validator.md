@@ -102,7 +102,7 @@ You can now download the "pregenesis" file for the chain.  This is a genesis fil
 
 ```sh
 cd $HOME/.pussy/config/
-wget -O $HOME/.pussy/config/genesis.json  https://github.com/joinresistance/networks/blob/main/space-pussy/unsigned-genesis.json
+wget -O $HOME/.pussy/config/genesis.json  https://raw.githubusercontent.com/joinresistance/networks/main/space-pussy/unsigned-genesis.json
 ```
 
 ### Import Validator Key
