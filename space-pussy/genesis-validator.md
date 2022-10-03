@@ -202,7 +202,7 @@ cp ~/.pussy/config/gentx/gentx-<your-moniker>.json networks/space-pussy/gentxs/
  
 ```sh
 cd networks
-git add bostrom/gentxs/*
+git add space-pussy/gentxs/*
 git commit -m "<your validator moniker> gentx"
 git push origin master
 ```
@@ -225,7 +225,7 @@ Those things should not be changed, otherwise, your validator won't start on Gen
 
 ## Prepare node for chain start
 
-Ok, so here is it, the final genesis for the space-pussy `TBA`. Now only a few steps left to finalize the validator node setup for bostrom launch:
+Ok, so here is it, the final genesis for the space-pussy `TBA`. Now only a few steps left to finalize the validator node setup for space-pussy launch:
 
 - Clear out old containers
 - Download final genesis, and place it to working directory `$HOME/.cyber`
@@ -244,7 +244,7 @@ Remove pre-genesis from .pussy:
 rm $HOME/.pussy/config/genesis.json
 ```
 
-Download genesis file for bostrom:
+Download genesis file for space-pussy:
 
 ```bash
 wget -O $HOME/.pussy/config/genesis.json https://gateway.ipfs.cybernode.ai/ipfs/TBA
@@ -258,10 +258,10 @@ pussy unsafe-reset-all --home $HOME/.pussy/
 
 ### Deploy docker container
 
-To pull and deploy docker container for the `bostrom` chain use the following command:
+To pull and deploy docker container for the `space-pussy` chain use the following command:
 
 ```bash
-docker run -d --gpus all --name=bostrom --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=false -v $HOME/.pussy:/root/.pussy  cyberd/cyber:space-pussy-v0.1.0
+docker run -d --gpus all --name=space-pussy --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=false -v $HOME/.pussy:/root/.pussy  cyberd/cyber:space-pussy-v0.1.0
 ```
 
 

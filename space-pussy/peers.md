@@ -17,5 +17,5 @@ Bro_n_Bro validator
 Citizen Cosmos
 
 ```bash
-TBA
+66eabcb6639163be65bdf88cde11732b9fe0a63c@195.201.81.239:26656
 ```
