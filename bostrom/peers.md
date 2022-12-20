@@ -61,7 +61,7 @@ dd22cffccafaece970cfa9e7eb3c8468f6fa1c84@46.166.165.14:26656
 web34ever
 
 ```bash
-5e8522bef5ceca507e05aa0d5f67f37a70222c73@185.230.90.202:26656
+5e8522bef5ceca507e05aa0d5f67f37a70222c73@88.218.191.79:26656
 ```
 
 POSTHUMAN
@@ -69,7 +69,6 @@ POSTHUMAN
 ```bash
 55937c36959ea3984cc6e6ebd3354d73bbbdbcda@95.165.24.115:26656
 ```
-
 
 ## Run a seed on akash
 
