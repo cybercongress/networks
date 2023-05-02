@@ -11,7 +11,7 @@ cyberongress:
 Bro_n_Bro validator
 
 ```bash
-2e51205853f88048ac2ccb0b830960bbead14996@93.159.133.250:56656
+6c8dc2888fc42b910c4bd34d7d51ee1d01946c76@93.159.134.158:36656
 ```
 
 Citizen Cosmos
