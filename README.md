@@ -6,10 +6,19 @@
 
 API endpoints 
 
-https://rpc.space-pussy.cybernode.ai/
-https://lcd.space-pussy.cybernode.ai/
-https://index.space-pussy.cybernode.ai/
-https://grpc.space-pussy.cybernode.ai/
+https://rpc.space-pussy.cybernode.ai/  
+https://lcd.space-pussy.cybernode.ai/  
+https://index.space-pussy.cybernode.ai/  
+https://grpc.space-pussy.cybernode.ai/  
+
+------ 
+## To get peers
+
+If you want to get up-to-date peers use one of the scripts below for bash or nushell:
+
+**[Bash](get_peers/getpeers.sh)**  
+**[Nushell](get_peers/getpeers.nu)**  
+How to use nushell with pussy [Cyber-Prophet](https://github.com/cyber-prophet/cy)
 
 ------
 ## Chainstats
