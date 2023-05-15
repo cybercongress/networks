@@ -1,5 +1,6 @@
 #!/bin/bash
 
+##https://gist.github.com/Cordtus/87b147862627d3039f394695b78e4361
 ## dump connected peers to comma separated persistent_peers list
 
 RED='\033[0;91m'
