@@ -83,9 +83,9 @@ root@node:~/.cyber/cosmovisor# tree
 
 ## You are done! What's next?
 
-Now is a good time to go and vote for prop #41. If you haven't done this yet, report that you have completed preparation for the upgrade in our [Hall of Fame](https://t.me/fameofcyber) and chill until the upgrade block 15515000, which should come around ~9:00am UTC Friday 04.10.2024 ([ping.pub timer](https://ping.pub/bostrom/block/15515000)).
+Now is a good time to go and vote for prop [#45](https://cyb.ai/senate/45). If you haven't done this yet, report that you have completed preparation for the upgrade in our [Hall of Fame](https://t.me/fameofcyber) and chill until the upgrade block 15515000, which should come around ~9:00am UTC Friday 04.10.2024 ([ping.pub timer](https://ping.pub/bostrom/block/15515000)).
 
-What will happen at the block 15515000:
+What will happen at the block 15515000: 
 
 - the chain will halt with the message `CONSENSUS FAILURE!!! err="UPGRADE \"v4\" NEEDED at height: 15515000:`
 - Cosmovisor inside the container will catch this event and change symlink inside `.cyber/cosmovisor/` folder
