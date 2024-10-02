@@ -85,7 +85,7 @@ root@node:~/.cyber/cosmovisor# tree
 
 Now is a good time to go and vote for prop [#45](https://cyb.ai/senate/45). If you haven't done this yet, report that you have completed preparation for the upgrade in our [Hall of Fame](https://t.me/fameofcyber) and chill until the upgrade block 15515000, which should come around ~9:00am UTC Friday 04.10.2024 ([ping.pub timer](https://ping.pub/bostrom/block/15515000)).
 
-What will happen at the block 15515000: 
+What will happen at the block 15515000:
 
 - the chain will halt with the message `CONSENSUS FAILURE!!! err="UPGRADE \"v4\" NEEDED at height: 15515000:`
 - Cosmovisor inside the container will catch this event and change symlink inside `.cyber/cosmovisor/` folder
@@ -94,3 +94,7 @@ What will happen at the block 15515000:
 ## Crisis protocol
 
 The process of upgrading should go pretty smoothly and should not require any direct action, but in case something goes wrong, cyber devs may consider certain ways to recover. Simply check your node at the time of the upgrade and consult the [Hall of Fame](https://t.me/fameofcyber) chat for possible coordination.
+
+## Note: Keys format upgrade
+
+In the v4 release cyber is being updated to the cometbft consensus engine, which leads to keystore migration to the cometbft compatible version. That will mean that after the upgrade and first signed TX using the new version of CLI, the keystore would be migrated and no longer compatible with the old CLI versions. Everything would work smoothly if you use `docker exec -ti bostrom cyber tx ...` for transaction casting, however, if you have CLI installed separately - make sure to upgrade it as well to [v4.0.0](https://github.com/cybercongress/go-cyber/releases/tag/v4.0.0).
