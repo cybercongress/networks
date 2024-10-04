@@ -4,7 +4,7 @@ This guide describes all the steps you need to get ready for the `v4` upgrade in
 
 Hereby we assume that you run your node in docker with the cyber ["official"](https://hub.docker.com/layers/cyber/cyberd/cyber/bostrom-1/images/sha256-6383de3e4562690907b0dbb99b752f53ef2d41f44a7d452a903d24397e49911b?context=explore) image, otherwise, this guide will not suit you.
 
-## Step 1: Pull a new docker image
+## Step 1: Pull a new docker image & prepare
 
 The new cyber binary is wrapped in the new docker image, so we have to pull it first:
 
@@ -17,6 +17,12 @@ It may take a few minutes. When complete, check that you have it:
 ```js
 docker images
 ```
+
+Make sure that in `config/app.toml` you have  `minimum-gas-prices` valuet set: 
+
+```bash
+ minimum-gas-prices = "0boot"
+ ```
 
 ## Step 2: Replace the docker image for the Bostrom container
 
